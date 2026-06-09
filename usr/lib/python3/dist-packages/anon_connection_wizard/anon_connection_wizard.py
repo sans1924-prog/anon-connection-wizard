@@ -521,6 +521,7 @@ class BridgesWizardPage2(QtWidgets.QWizardPage):
         if (bridge_defined_type.startswith('obfs4')
                 or bridge_defined_type.startswith('meek_lite')
                 or bridge_defined_type.startswith('snowflake')
+                or bridge_defined_type.startswith('webtunnel')
             ## This case try to match vanilla bridges.
             ## Example, trying to match "109.23.3.9:8236"
             ## This is dirty but hopefully it is effective
@@ -1226,6 +1227,8 @@ class AnonConnectionWizard(QtWidgets.QWizard):
                             self.torrc_page.label_5.setText('Custom meek_lite')
                         elif Common.bridge_custom.lower().startswith('snowflake'):
                             self.torrc_page.label_5.setText('Custom snowflake')
+                        elif Common.bridge_custom.lower().startswith('webtunnel'):
+                            self.torrc_page.label_5.setText('Custom webtunnel')   
                         else:
                             self.torrc_page.label_5.setText('Custom vanilla')
 
